@@ -1,5 +1,9 @@
 # React star wars app
 
-## Changed image
+## Project members
 
-### hello
+### Zachary Kuchar
+
+### Temitope Balogun
+
+### Lynette Cargo
