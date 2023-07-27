@@ -18,6 +18,12 @@ function App() {
   return (
     <div className="App">
       <h1>Star wars</h1>
+      <h1>Header</h1>
+      <h2>--Home Link</h2>
+      <h2>--Films link</h2>
+      <h2>--Database link</h2>
+      <h2>--Star ships Link</h2>
+      <h1>Footer</h1>
     </div>
   );
 }
