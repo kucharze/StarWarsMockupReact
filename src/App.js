@@ -1,6 +1,5 @@
 import logo from "./logo.svg";
 import "./App.css";
-console.log;
 
 function App() {
   let api = "https://swapi.dev/people/2";
