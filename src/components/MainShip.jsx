@@ -7,7 +7,8 @@ function MainShip(props) {
       <h2>Model: {props.model}</h2>
       <h2>Max Speed: {props.max_speed} km/h</h2>
       <h2>Cargo Capacity: {props.cargo} units</h2>
-      <h2>Cost in credits: {props.credits}</h2>
+      <h2>Cost in credits: {props.credits} credits</h2>
+      <h2>Created: {props.created}</h2>
     </div>
   )
 }

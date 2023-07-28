@@ -19,7 +19,7 @@ function SpaceShips() {
         );
 
     //let item = await data.data;
-    console.log(data.data);
+    //console.log(data.data);
 
     //items.push(data.data)
     // }
@@ -45,11 +45,6 @@ function SpaceShips() {
         page
         );
 
-    //let item = await data.data;
-    //console.log(data.data);
-
-    //items.push(data.data)
-    // }
     
     setShips(data.data.results)
     setNextPage(data.data.next)
@@ -58,9 +53,9 @@ function SpaceShips() {
     setLoading(false)
   };
 
-  const setMain = (name,mod,speed,cargo,cost) =>{
-    console.log(cost)
-    setSpec([name,mod,speed,cargo,cost])
+  const setMain = (name,mod,speed,cargo,cost,created) =>{
+    // console.log(cost)
+    setSpec([name,mod,speed,cargo,cost,created])
   }
   
 
@@ -73,7 +68,7 @@ function SpaceShips() {
       <h1>The SpaceShips Section</h1>
       {
         spec && <MainShip name={spec[0]} model={spec[1]} 
-        max_speed={spec[2]} cargo={spec[3]} credits={spec[4]}/>
+        max_speed={spec[2]} cargo={spec[3]} credits={spec[4]} created={spec[5]}/>
       }
       <button className="btn"  onClick={()=>{loadPage(prevPage)}}>Prev page</button>
       <button className="btn" onClick={()=>{loadPage(nextPage)}}>Next page</button>
@@ -86,7 +81,7 @@ function SpaceShips() {
                 onClick={()=>{
                     setMain(item.name,item.model,
                         item.max_atmosphering_speed,item.cargo_capacity,
-                        item.cost_in_credits
+                        item.cost_in_credits, item.created
                     )
                 }}
                 />
