@@ -5,9 +5,10 @@ import MainPerson from "../components/MainPerson";
 
 function People() {
     const [people,setPeople] = useState([])
-      const [spec,setSpec] = useState(null)
+    const [spec,setSpec] = useState(null)
     const [nextPage, setNextPage] = useState(null)
     const [prevPage, setPrevPage] = useState(null)
+    const [loading, setLoading] = useState(true)
 
     const getData = async () => {
     let data = await axios.get(
@@ -22,13 +23,19 @@ function People() {
     setPeople(data.data.results)
     setNextPage(data.data.next)
     setPrevPage(data.data.previous)
+
+
+    setLoading(false)
+
   };
 
     const loadPage = async (page) => {
+
     if(page==null){
         alert("No page to go to in this direction")
         return
     }
+    setLoading(true)
     let data;
     // for(let i=2; i<=5; i++){
         data = await axios.get(
@@ -44,11 +51,15 @@ function People() {
     setPeople(data.data.results)
     setNextPage(data.data.next)
     setPrevPage(data.data.previous)
+
+
+        setLoading(false)
+
   };
 
-  const setMain = (name,age) =>{
+  const setMain = (name,birth,height,gender) =>{
     console.log("Trying to set specifics")
-    setSpec([name,age])
+    setSpec([name,birth,height,gender])
   }
 
   useEffect(() => {
@@ -58,18 +69,20 @@ function People() {
     <div>
       <h1>People component</h1>
       <div className="main">
-        {spec && <MainPerson />}
-      </div>
-      <div className="peopleDisplay">
-        {
-            people.map((item)=>{
-                return <PeopleDisplay 
-                onClick={()=>setMain(item.name,item.birthyear)} key={item.name} name={item.name}/>
-            })
-        }
+        {spec && <MainPerson name={spec[0]} birth={spec[1]} height={spec[2]} gender={spec[3]}/>}
       </div>
       <button className="btn"  onClick={()=>{loadPage(prevPage)}}>Prev page</button>
       <button className="btn" onClick={()=>{loadPage(nextPage)}}>Next page</button>
+      <div className="peopleDisplay">
+        { loading? <h1>Loading</h1> :
+            people.map((item)=>{
+                return <PeopleDisplay 
+                onClick={()=>setMain(item.name,item.birth_year,item.height,item.gender)} 
+                key={item.name} name={item.name}/>
+            })
+        }
+      </div>
+
     </div>
   )
 }

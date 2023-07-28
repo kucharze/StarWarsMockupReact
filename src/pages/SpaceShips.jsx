@@ -7,6 +7,7 @@ function SpaceShips() {
   const [spec,setSpec] = useState(null)
   const [nextPage, setNextPage] = useState(null)
   const [prevPage, setPrevPage] = useState(null)
+  const [loading, setLoading] = useState(true)
 
   const getData = async () => {
     let items=[]
@@ -25,6 +26,10 @@ function SpaceShips() {
     setShips(data.data.results)
     setNextPage(data.data.next)
     setPrevPage(data.data.previous)
+
+
+    setLoading(false)
+
   };
 
   const loadPage = async (page) => {
@@ -32,6 +37,7 @@ function SpaceShips() {
         alert("No page to go to in this direction")
         return
     }
+    setLoading(true)
     let data;
     // for(let i=2; i<=5; i++){
         data = await axios.get(
@@ -47,6 +53,8 @@ function SpaceShips() {
     setShips(data.data.results)
     setNextPage(data.data.next)
     setPrevPage(data.data.previous)
+
+    setLoading(false)
   };
 
   const setMain = (name,age) =>{
@@ -60,8 +68,11 @@ function SpaceShips() {
   return (
     <div>
       <h1>The SpaceShips Section</h1>
+      <button className="btn"  onClick={()=>{loadPage(prevPage)}}>Prev page</button>
+      <button className="btn" onClick={()=>{loadPage(nextPage)}}>Next page</button>
       <div className="shipDisplay">
         {
+            loading? <h1>Loading</h1> :
             ships.map((item)=>{
                 return <DisplayItem key={item.name} 
                 name={item.name} model={item.model}
@@ -69,8 +80,7 @@ function SpaceShips() {
             })
         }
       </div>
-      <button className="btn"  onClick={()=>{loadPage(prevPage)}}>Prev page</button>
-      <button className="btn" onClick={()=>{loadPage(nextPage)}}>Next page</button>
+
     </div>
   )
 }
