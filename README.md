@@ -8,15 +8,16 @@
 
 ### Lynette Cargo
 
-##Description
+## Description
+
 This is a star wars web site.
 
-##WireFrame
+## WireFrame
 
-##Component Hierarcgy
+## Component Hierarcgy
 
-##APIs used
+## APIs used
 
-##MVP
+## MVP
 
-##Post MVP
+## Post MVP
