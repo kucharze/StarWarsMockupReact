@@ -8,10 +8,10 @@ function MainPerson(props) {
     const loadPage = async () => {
 
         setLoading(true)
-        console.log("In load page main person")
+        //console.log("In load page main person")
 
         let data= await axios.get(props.homeworld);
-        console.log(data.data)
+        //console.log(data.data)
 
         setHomeworld(data.data)
 

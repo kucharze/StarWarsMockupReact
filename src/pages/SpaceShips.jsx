@@ -11,23 +11,13 @@ function SpaceShips() {
   const [loading, setLoading] = useState(true)
 
   const getData = async () => {
-    let items=[]
-    let data;
-    // for(let i=2; i<=5; i++){
-        data = await axios.get(
-        `https://swapi.dev/api/starships/`
-        );
+    let data= await axios.get(`https://swapi.dev/api/starships/`);
 
-    //let item = await data.data;
     //console.log(data.data);
-
-    //items.push(data.data)
-    // }
     
     setShips(data.data.results)
     setNextPage(data.data.next)
     setPrevPage(data.data.previous)
-
 
     setLoading(false)
 
@@ -39,11 +29,7 @@ function SpaceShips() {
         return
     }
     setLoading(true)
-    let data;
-    // for(let i=2; i<=5; i++){
-        data = await axios.get(
-        page
-        );
+    let data= await axios.get(page);
 
     
     setShips(data.data.results)

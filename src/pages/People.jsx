@@ -17,13 +17,10 @@ function People() {
         // "https://swapi.dev/api/planets/2/"
         );
 
-    //let item = await data.data;
-    console.log(data.data);
 
     setPeople(data.data.results)
     setNextPage(data.data.next)
     setPrevPage(data.data.previous)
-
 
     setLoading(false)
 
