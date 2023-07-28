@@ -3,7 +3,7 @@ import axios from "axios";
 
 function MainPerson(props) {
     const [homeWorld,setHomeworld] = useState(null)
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
 
     const loadPage = async () => {
 
