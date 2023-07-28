@@ -3,6 +3,7 @@ import "./App.css";
 import axios from "axios";
 import { useEffect } from "react";
 import SpaceShips from "./pages/SpaceShips";
+import People from "./pages/People";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <h2>--Home Link</h2>
       <h2>--Films link</h2>
       <h2>--Database link</h2>
+      <People />
       <h2>--Star ships Link</h2>
       <SpaceShips />
       <h1>Footer</h1>
