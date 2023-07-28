@@ -1,9 +1,11 @@
 import axios from "axios";
 import React, {useEffect, useState} from 'react'
 import PeopleDisplay from "../components/PeopleDisplay";
+import MainPerson from "../components/MainPerson";
 
 function People() {
     const [people,setPeople] = useState([])
+      const [spec,setSpec] = useState(null)
     const [nextPage, setNextPage] = useState(null)
     const [prevPage, setPrevPage] = useState(null)
 
@@ -45,7 +47,7 @@ function People() {
   };
 
   const setMain = (name,age) =>{
-
+    setSpec([name,age])
   }
 
   useEffect(() => {
@@ -54,10 +56,14 @@ function People() {
   return (
     <div>
       <h1>People component</h1>
+      <div className="main">
+        {spec && <MainPerson />}
+      </div>
       <div className="peopleDisplay">
         {
             people.map((item)=>{
-                return <PeopleDisplay key={item.name} name={item.name}/>
+                return <PeopleDisplay 
+                onClick={()=>setMain(item.name,item.birthyear)} key={item.name} name={item.name}/>
             })
         }
       </div>

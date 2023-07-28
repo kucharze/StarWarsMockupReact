@@ -4,7 +4,7 @@ import DisplayItem from "../components/DisplayItem";
 
 function SpaceShips() {
   const [ships,setShips] = useState([])
-  const [spec,setSpec] = useState([])
+  const [spec,setSpec] = useState(null)
   const [nextPage, setNextPage] = useState(null)
   const [prevPage, setPrevPage] = useState(null)
 
@@ -50,7 +50,7 @@ function SpaceShips() {
   };
 
   const setMain = (name,age) =>{
-
+    setSpec([name,age])
   }
 
   useEffect(() => {
