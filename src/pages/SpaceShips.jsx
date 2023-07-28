@@ -58,8 +58,9 @@ function SpaceShips() {
     setLoading(false)
   };
 
-  const setMain = (name,mod,speed) =>{
-    setSpec([name,mod,speed])
+  const setMain = (name,mod,speed,cargo,cost) =>{
+    console.log(cost)
+    setSpec([name,mod,speed,cargo,cost])
   }
   
 
@@ -71,7 +72,8 @@ function SpaceShips() {
     <div>
       <h1>The SpaceShips Section</h1>
       {
-        spec && <MainShip name={spec[0]} model={spec[1]} max_speed={spec[2]}/>
+        spec && <MainShip name={spec[0]} model={spec[1]} 
+        max_speed={spec[2]} cargo={spec[3]} credits={spec[4]}/>
       }
       <button className="btn"  onClick={()=>{loadPage(prevPage)}}>Prev page</button>
       <button className="btn" onClick={()=>{loadPage(nextPage)}}>Next page</button>
@@ -81,7 +83,12 @@ function SpaceShips() {
             ships.map((item)=>{
                 return <DisplayItem key={item.name} 
                 name={item.name} model={item.model}
-                onClick={()=>{setMain(item.name,item.model,item.max_atmosphering_speed)}}
+                onClick={()=>{
+                    setMain(item.name,item.model,
+                        item.max_atmosphering_speed,item.cargo_capacity,
+                        item.cost_in_credits
+                    )
+                }}
                 />
             })
         }
