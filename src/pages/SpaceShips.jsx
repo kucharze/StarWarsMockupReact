@@ -28,6 +28,10 @@ function SpaceShips() {
   };
 
   const loadPage = async (page) => {
+    if(page==null){
+        alert("No page to go to in this direction")
+        return
+    }
     let data;
     // for(let i=2; i<=5; i++){
         data = await axios.get(
@@ -52,13 +56,17 @@ function SpaceShips() {
   return (
     <div>
       <h1>The SpaceShips Section</h1>
-      {
-        ships.map((item)=>{
-            return <DisplayItem key={item.name} 
-            name={item.name} model={item.model}
-            />
-        })
-      }
+      <div className="shipDisplay">
+        {
+            ships.map((item)=>{
+                return <DisplayItem key={item.name} 
+                name={item.name} model={item.model}
+                />
+            })
+        }
+      </div>
+      <button className="btn"  onClick={()=>{loadPage(prevPage)}}>Prev page</button>
+      <button className="btn" onClick={()=>{loadPage(nextPage)}}>Next page</button>
     </div>
   )
 }
