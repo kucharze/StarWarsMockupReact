@@ -43,14 +43,14 @@ function People() {
     setNextPage(data.data.next)
     setPrevPage(data.data.previous)
 
-
     setLoading(false)
 
   };
 
-  const setMain = (name,birth,height,gender,mass) =>{
+  const setMain = (name,birth,height,gender,mass,home) =>{
     console.log("Trying to set specifics")
-    setSpec([name,birth,height,gender,mass])
+    console.log(home)
+    setSpec([name,birth,height,gender,mass,home])
   }
 
   useEffect(() => {
@@ -62,7 +62,7 @@ function People() {
       <div className="main">
         {spec && <MainPerson 
         name={spec[0]} birth={spec[1]} height={spec[2]} 
-        gender={spec[3]} mass={spec[4]}
+        gender={spec[3]} mass={spec[4]} homeworld = {spec[5]}
         />}
       </div>
       <button className="btn"  onClick={()=>{loadPage(prevPage)}}>Prev page</button>
@@ -73,7 +73,7 @@ function People() {
                 return <PeopleDisplay 
                 onClick={
                     ()=>{
-                        setMain(item.name,item.birth_year,item.height,item.gender,item.mass)
+                        setMain(item.name,item.birth_year,item.height,item.gender,item.mass,item.homeworld)
                     }} 
                 key={item.name} name={item.name}/>
             })
