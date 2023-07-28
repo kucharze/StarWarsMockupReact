@@ -27,6 +27,9 @@
   width: 1600px;
   justify-content: center;
 }
+.MainPerson {
+  border: solid white;
+}
 .people {
   border: solid lightgrey;
   margin: 1em;
