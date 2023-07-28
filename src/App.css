@@ -50,6 +50,165 @@
   margin: 1em;
   padding: 1em;
 }
+/* google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;800;900&display=swap");
+/* font-family: 'Poppins', sans-serif; */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("https://lumiere-a.akamaihd.net/v1/images/background-stars-desktop_v2_96b6d74a.jpeg?region=0%2C0%2C2048%2C1600");
+  background-size: cover;
+}
+
+.App {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  color: #f5f5f5;
+}
+
+/* NAVBAR */
+#navBar {
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 0.5px #f5f5f5;
+  border-style: none none solid none;
+  padding: 0 40px;
+}
+ul {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
+li {
+  filter: brightness(0.5);
+}
+li:hover {
+  filter: brightness(1.5);
+}
+a {
+  color: #f5f5f5;
+  text-decoration: none;
+}
+.logo {
+  width: 150px;
+}
+/* mini logos */
+#miniWrapper {
+  display: flex;
+}
+.tiktokBox {
+  display: flex;
+  align-items: center;
+}
+.miniTikTok {
+  width: 20px;
+}
+.miniLine {
+  border-style: none none none solid;
+  padding-left: 5px;
+  height: 25px;
+  margin: 12px;
+  opacity: 60%;
+}
+
+/* home landing carousel */
+#btnWrapper {
+  /* border:solid yellow; */
+  width: 100%;
+  height: 500px;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  /* top: -50px; */
+}
+.leftBtn {
+  /* border: solid red; */
+  display: flex;
+  transform: scaleX(-1);
+}
+.buttonCir {
+  width: 70px;
+  opacity: 60%;
+}
+.imgSize {
+  width: 100%;
+  height: auto;
+}
+
+/* movie page */
+#filmWrapper {
+  border: solid blue;
+  /* display: flex; */
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.filmBox {
+  overflow-x: auto;
+}
+#movieWrapper {
+  border: solid yellow;
+  /* width: 400px; */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 50px 20px;
+}
+/* #movieDetails {
+  border: solid turquoise;
+  width: 600px;
+} */
+#movieBox {
+  border: solid lime;
+  border-radius: 15px;
+  width: 300px;
+  margin: 15px;
+}
+.filmLeft {
+  border: solid orangered;
+  width: 400px;
+}
+.movieTitle {
+  font-size: 20px;
+  font-weight: 700;
+}
+/* footer */
+#footerWrapper {
+  width: 100%;
+  text-align: center;
+  bottom: 0;
+}
+
+/* media queries */
+@media screen and (max-width: 767px) {
+  body {
+    background-size: contain;
+  }
+  #navBar {
+    height: 90px;
+    padding: 20px;
+  }
+  .logo {
+    width: 100px;
+  }
+  ul {
+    gap: 10px;
+    font-size: 12px;
+  }
+  #btnWrapper {
+    height: 170px;
+  }
+  .buttonCir {
+    width: 40px;
+  }
+}
 
 @media (max-width: 1600px) {
   .btn {
