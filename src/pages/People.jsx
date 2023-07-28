@@ -2,6 +2,7 @@ import axios from "axios";
 import React, {useEffect, useState} from 'react'
 import PeopleDisplay from "../components/PeopleDisplay";
 import MainPerson from "../components/MainPerson";
+import MainLayout from "../components/MainLayout";
 
 function People() {
     const [people,setPeople] = useState([])
@@ -54,30 +55,33 @@ function People() {
     getData();
   }, []);
   return (
-    <div>
-      <h1>People component</h1>
-      <div className="main">
-        {spec && <MainPerson 
-        name={spec[0]} birth={spec[1]} height={spec[2]} 
-        gender={spec[3]} mass={spec[4]} homeworld = {spec[5]}
-        />}
-      </div>
-      <button className="btn"  onClick={()=>{loadPage(prevPage)}}>Prev page</button>
-      <button className="btn" onClick={()=>{loadPage(nextPage)}}>Next page</button>
-      <div className="peopleDisplay">
-        { loading? <h1>Loading</h1> :
-            people.map((item)=>{
-                return <PeopleDisplay 
-                onClick={
-                    ()=>{
-                        setMain(item.name,item.birth_year,item.height,item.gender,item.mass,item.homeworld)
-                    }} 
-                key={item.name} name={item.name}/>
-            })
-        }
-      </div>
+    <MainLayout>
+      <div>
+          <h1>People component</h1>
+          <div className="main">
+            {spec && <MainPerson 
+            name={spec[0]} birth={spec[1]} height={spec[2]} 
+            gender={spec[3]} mass={spec[4]} homeworld = {spec[5]}
+            />}
+          </div>
+          <button className="btn"  onClick={()=>{loadPage(prevPage)}}>Prev page</button>
+          <button className="btn" onClick={()=>{loadPage(nextPage)}}>Next page</button>
+          <div className="peopleDisplay">
+            { loading? <h1>Loading</h1> :
+                people.map((item)=>{
+                    return <PeopleDisplay 
+                    onClick={
+                        ()=>{
+                            setMain(item.name,item.birth_year,item.height,item.gender,item.mass,item.homeworld)
+                        }} 
+                    key={item.name} name={item.name}/>
+                })
+            }
+          </div>
 
-    </div>
+      </div>
+    </MainLayout>
+   
   )
 }
 

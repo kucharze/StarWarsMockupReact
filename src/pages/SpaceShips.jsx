@@ -2,6 +2,7 @@ import axios from "axios";
 import React, {useEffect, useState} from 'react'
 import DisplayItem from "../components/DisplayItem";
 import MainShip from "../components/MainShip";
+import MainLayout from "../components/MainLayout";
 
 function SpaceShips() {
   const [ships,setShips] = useState([])
@@ -50,32 +51,34 @@ function SpaceShips() {
   }, []);
 
   return (
-    <div>
-      <h1>The SpaceShips Section</h1>
-      {
-        spec && <MainShip name={spec[0]} model={spec[1]} 
-        max_speed={spec[2]} cargo={spec[3]} credits={spec[4]} created={spec[5]}/>
-      }
-      <button className="btn"  onClick={()=>{loadPage(prevPage)}}>Prev page</button>
-      <button className="btn" onClick={()=>{loadPage(nextPage)}}>Next page</button>
-      <div className="shipDisplay">
+    <MainLayout>
+      <div>
+        <h1>The SpaceShips Section</h1>
         {
-            loading? <h1>Loading</h1> :
-            ships.map((item)=>{
-                return <DisplayItem key={item.name} 
-                name={item.name} model={item.model}
-                onClick={()=>{
-                    setMain(item.name,item.model,
-                        item.max_atmosphering_speed,item.cargo_capacity,
-                        item.cost_in_credits, item.created
-                    )
-                }}
-                />
-            })
+          spec && <MainShip name={spec[0]} model={spec[1]} 
+          max_speed={spec[2]} cargo={spec[3]} credits={spec[4]} created={spec[5]}/>
         }
-      </div>
+        <button className="btn"  onClick={()=>{loadPage(prevPage)}}>Prev page</button>
+        <button className="btn" onClick={()=>{loadPage(nextPage)}}>Next page</button>
+        <div className="shipDisplay">
+          {
+              loading? <h1>Loading</h1> :
+              ships.map((item)=>{
+                  return <DisplayItem key={item.name} 
+                  name={item.name} model={item.model}
+                  onClick={()=>{
+                      setMain(item.name,item.model,
+                          item.max_atmosphering_speed,item.cargo_capacity,
+                          item.cost_in_credits, item.created
+                      )
+                  }}
+                  />
+              })
+          }
+        </div>
 
-    </div>
+      </div>
+    </MainLayout>
   )
 }
 

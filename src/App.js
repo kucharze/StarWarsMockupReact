@@ -15,7 +15,6 @@ function App() {
   return (
     <div className="App">
       <h1>Star wars</h1>
-      <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/films" element={<FilmList />} />
@@ -23,7 +22,6 @@ function App() {
         <Route path="/spaceships" element={<SpaceShips />} />
         <Route path="*" element={<NoPage />} />
       </Routes>
-      <Footer />
     </div>
   );
 }
