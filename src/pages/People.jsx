@@ -47,6 +47,7 @@ function People() {
   };
 
   const setMain = (name,age) =>{
+    console.log("Trying to set specifics")
     setSpec([name,age])
   }
 
