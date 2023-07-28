@@ -49,6 +49,10 @@ function SpaceShips() {
     setPrevPage(data.data.previous)
   };
 
+  const setMain = (name,age) =>{
+
+  }
+
   useEffect(() => {
     getData();
   }, []);
