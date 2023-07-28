@@ -36,30 +36,21 @@ function People() {
         return
     }
     setLoading(true)
-    let data;
-    // for(let i=2; i<=5; i++){
-        data = await axios.get(
-        page
-        );
+    let data= await axios.get(page);
 
-    //let item = await data.data;
-    //console.log(data.data);
-
-    //items.push(data.data)
-    // }
     
     setPeople(data.data.results)
     setNextPage(data.data.next)
     setPrevPage(data.data.previous)
 
 
-        setLoading(false)
+    setLoading(false)
 
   };
 
-  const setMain = (name,birth,height,gender) =>{
+  const setMain = (name,birth,height,gender,mass) =>{
     console.log("Trying to set specifics")
-    setSpec([name,birth,height,gender])
+    setSpec([name,birth,height,gender,mass])
   }
 
   useEffect(() => {
@@ -69,7 +60,10 @@ function People() {
     <div>
       <h1>People component</h1>
       <div className="main">
-        {spec && <MainPerson name={spec[0]} birth={spec[1]} height={spec[2]} gender={spec[3]}/>}
+        {spec && <MainPerson 
+        name={spec[0]} birth={spec[1]} height={spec[2]} 
+        gender={spec[3]} mass={spec[4]}
+        />}
       </div>
       <button className="btn"  onClick={()=>{loadPage(prevPage)}}>Prev page</button>
       <button className="btn" onClick={()=>{loadPage(nextPage)}}>Next page</button>
@@ -77,7 +71,10 @@ function People() {
         { loading? <h1>Loading</h1> :
             people.map((item)=>{
                 return <PeopleDisplay 
-                onClick={()=>setMain(item.name,item.birth_year,item.height,item.gender)} 
+                onClick={
+                    ()=>{
+                        setMain(item.name,item.birth_year,item.height,item.gender,item.mass)
+                    }} 
                 key={item.name} name={item.name}/>
             })
         }
