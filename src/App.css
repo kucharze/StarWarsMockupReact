@@ -30,6 +30,9 @@
 .MainPerson {
   border: solid white;
 }
+.mainShip {
+  border: solid white;
+}
 .people {
   border: solid lightgrey;
   margin: 1em;
