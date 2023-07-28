@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, {useEffect, useState} from 'react'
 import DisplayItem from "../components/DisplayItem";
+import MainShip from "../components/MainShip";
 
 function SpaceShips() {
   const [ships,setShips] = useState([])
@@ -57,9 +58,10 @@ function SpaceShips() {
     setLoading(false)
   };
 
-  const setMain = (name,age) =>{
-    setSpec([name,age])
+  const setMain = (name,mod,speed) =>{
+    setSpec([name,mod,speed])
   }
+  
 
   useEffect(() => {
     getData();
@@ -68,6 +70,9 @@ function SpaceShips() {
   return (
     <div>
       <h1>The SpaceShips Section</h1>
+      {
+        spec && <MainShip name={spec[0]} model={spec[1]} max_speed={spec[2]}/>
+      }
       <button className="btn"  onClick={()=>{loadPage(prevPage)}}>Prev page</button>
       <button className="btn" onClick={()=>{loadPage(nextPage)}}>Next page</button>
       <div className="shipDisplay">
@@ -76,6 +81,7 @@ function SpaceShips() {
             ships.map((item)=>{
                 return <DisplayItem key={item.name} 
                 name={item.name} model={item.model}
+                onClick={()=>{setMain(item.name,item.model,item.max_atmosphering_speed)}}
                 />
             })
         }
