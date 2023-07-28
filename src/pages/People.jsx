@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, {useEffect, useState} from 'react'
+import PeopleDisplay from "../components/PeopleDisplay";
 
 function People() {
     const [people,setPeople] = useState([])
@@ -52,7 +53,7 @@ function People() {
       <div className="peopleDisplay">
         {
             people.map((item)=>{
-                return <h1 key={item.name}>{item.name}</h1>
+                return <PeopleDisplay key={item.name} name={item.name}/>
             })
         }
       </div>

@@ -19,6 +19,18 @@
   width: 1600px;
 }
 
+.peopleDisplay {
+  display: flex;
+  border: solid white;
+  flex-wrap: wrap;
+  width: 1600px;
+}
+.people {
+  border: solid lightgrey;
+  margin: 1em;
+  padding: 1em;
+}
+
 .btn {
   height: 100px;
   width: 100px;
