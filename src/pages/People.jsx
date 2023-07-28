@@ -22,6 +22,10 @@ function People() {
   };
 
     const loadPage = async (page) => {
+    if(page==null){
+        alert("No page to go to in this direction")
+        return
+    }
     let data;
     // for(let i=2; i<=5; i++){
         data = await axios.get(
@@ -45,11 +49,15 @@ function People() {
   return (
     <div>
       <h1>People component</h1>
-      {
-        people.map((item)=>{
-            return <h1 key={item.name}>{item.name}</h1>
-        })
-      }
+      <div className="peopleDisplay">
+        {
+            people.map((item)=>{
+                return <h1 key={item.name}>{item.name}</h1>
+            })
+        }
+      </div>
+      <button className="btn"  onClick={()=>{loadPage(prevPage)}}>Prev page</button>
+      <button className="btn" onClick={()=>{loadPage(nextPage)}}>Next page</button>
     </div>
   )
 }
