@@ -17,6 +17,7 @@
   border: solid white;
   flex-wrap: wrap;
   width: 1600px;
+  justify-content: center;
 }
 
 .peopleDisplay {
@@ -24,6 +25,7 @@
   border: solid white;
   flex-wrap: wrap;
   width: 1600px;
+  justify-content: center;
 }
 .people {
   border: solid lightgrey;
@@ -32,10 +34,10 @@
 }
 
 .btn {
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: 200px;
   margin: 1em;
-  font-size: 20px;
+  font-size: 25px;
 }
 .Ship {
   border: solid lightgrey;
