@@ -26,7 +26,7 @@ function NavBar() {
             <img src={logo.tiktok} alt="minilogos" className='miniTikTok'/>
           </a>
         </div>
-        <a href='https://www.tiktok.com/@starwars'>
+        <a href='https://www.instagram.com/starwars/'>
           <img src={logo.insta} alt="minilogos"/>
         </a>
         <a href='https://twitter.com/starwars'>
