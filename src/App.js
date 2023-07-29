@@ -10,6 +10,7 @@ import NoPage from "./pages/NoPage";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import FilmList from "./pages/FilmsList";
+import Coloring from "./pages/Coloring";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/films" element={<FilmList />} />
         <Route path="/characters" element={<People />} />
         <Route path="/spaceships" element={<SpaceShips />} />
+        <Route path="/kidscoloring" element={<Coloring />} />
         <Route path="*" element={<NoPage />} />
       </Routes>
     </div>

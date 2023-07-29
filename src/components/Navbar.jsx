@@ -39,9 +39,12 @@ function NavBar() {
           <img src={logo.youtube} alt="minilogos"/>
         </a>
         <div className='miniLine'></div>
-        <a href='https://www.starwarskids.com/'>
-          <img src={logo.kids} alt="minilogos" className='kids'/>
-        </a>
+        {/* <a href='https://www.starwarskids.com/'> */}
+        <Link to={'/kidscoloring'}>
+         <img src={logo.kids} alt="minilogos" className='kids'/>
+        </Link>
+         
+        {/* </a> */}
       </div>
       {/* middle */}
       <Link to='/'>
