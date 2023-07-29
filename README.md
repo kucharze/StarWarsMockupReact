@@ -10,7 +10,9 @@
 
 # Description
 
-### This is a star wars web site.
+### This is a star wars web site, based off star wars.com. Our goals were to have similar pages and functionality similar to pages on the site.
+
+### We want to make a simliar home page, header and footer. Our other pages will load up data on the films, characters, and star ships
 
 ## WireFrame
 
@@ -20,6 +22,10 @@
 
 ## APIs used
 
-## MVP
+## MVP - (Minimum viable product)
+
+### A Header that can appropriatly manuver to other without fail. Our pages, will also fetch from our API's where applicable and be able to load data.
 
 ## Post MVP
+
+### Styling for the different pages. Take information from loaded from our API's and display it in a clear for users. Load different pages of the API
