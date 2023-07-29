@@ -3,8 +3,7 @@ import React from 'react'
 function Color(props) {
   return (
     <div>
-      Color item
-      <img src={props.color} alt="" />
+      <img src={props.color} alt="coloringPic" className='Coloritem'/>
     </div>
   )
 }

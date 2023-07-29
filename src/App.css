@@ -7,6 +7,17 @@
   align-items: center;
 }
 
+.Coloringlist {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Coloritem {
+  height: 300px;
+  /* width: 300px; */
+  margin: 15px;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -194,29 +205,6 @@ a {
 }
 
 /* media queries */
-@media screen and (max-width: 767px) {
-  body {
-    background-size: contain;
-  }
-  #navBar {
-    height: 90px;
-    padding: 20px;
-  }
-  .logo {
-    width: 100px;
-  }
-  ul {
-    gap: 10px;
-    font-size: 12px;
-  }
-  #btnWrapper {
-    height: 170px;
-  }
-  .buttonCir {
-    width: 40px;
-  }
-}
-
 @media (max-width: 1650px) {
   .btn {
     height: 50px;
@@ -262,5 +250,39 @@ a {
     flex-direction: column;
     width: 800px;
     justify-content: center;
+  }
+
+  .Coloritem {
+    height: 200px;
+    /* width: 300px; */
+    margin: 15px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  body {
+    background-size: contain;
+  }
+  #navBar {
+    height: 90px;
+    padding: 20px;
+  }
+  .logo {
+    width: 100px;
+  }
+  ul {
+    gap: 10px;
+    font-size: 12px;
+  }
+  #btnWrapper {
+    height: 170px;
+  }
+  .buttonCir {
+    width: 40px;
+  }
+  .Coloritem {
+    height: 150px;
+    /* width: 300px; */
+    margin: 10px;
   }
 }
