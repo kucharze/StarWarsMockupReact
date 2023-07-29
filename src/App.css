@@ -40,10 +40,10 @@
 }
 
 .btn {
-  height: 80px;
-  width: 200px;
+  height: 60px;
+  width: 150px;
   margin: 1em;
-  font-size: 25px;
+  font-size: 20px;
 }
 .Ship {
   border: solid lightgrey;
@@ -210,10 +210,10 @@ a {
   }
 }
 
-@media (max-width: 1600px) {
+@media (max-width: 1650px) {
   .btn {
     height: 50px;
-    width: 150px;
+    width: 130px;
     margin: 1em;
     font-size: 20px;
   }
