@@ -13,13 +13,21 @@ function Home() {
   const [count, setCount] = useState(0)
 
   const nextImg = () => {
-    setCount(count +1)
-    setCurrentPic(homeImgs[count])
+    let newCount = count + 1
+    if(newCount>5){
+      newCount = 0
+    }
+    setCount(newCount)
+    setCurrentPic(homeImgs[newCount])
   }
 
   const prevImg = () => {
-    setCount(count -1)
-    setCurrentPic(homeImgs[count])
+    let newCount = count -1
+    if(newCount<0){
+      newCount = 5
+    }
+    setCount(newCount )
+    setCurrentPic(homeImgs[newCount ])
   }
 
 
@@ -30,7 +38,10 @@ function Home() {
         <div className='leftBtn'>
             <Button changePic={prevImg} />
         </div>
-            <Button changePic={nextImg} />
+        <div className="rightBtn">
+          <Button changePic={nextImg} />
+        </div>
+           
           </div>
         <div id='homePage'>
           <HomePage count={count} img={currentPic}/> 

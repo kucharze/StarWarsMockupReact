@@ -133,6 +133,13 @@ a {
   display: flex;
   transform: scaleX(-1);
 }
+.rightBtn {
+  /* border: solid red; */
+  display: flex;
+  /* transform: scaleX(-1); */
+  /* margin-right: 500px; */
+  /* padding-right: 300px; */
+}
 .buttonCir {
   width: 70px;
   opacity: 60%;
