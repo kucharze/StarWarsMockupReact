@@ -8,15 +8,15 @@
 
 ### Lynette Cargo
 
-## Description
+# Description
 
-# This is a star wars web site.
+### This is a star wars web site.
 
 ## WireFrame
 
 ## Component Hierarcgy
 
-IMG_8111.JPG
+![Alt text](TREE_Example.png)
 
 ## APIs used
 
