@@ -57,7 +57,7 @@ function People() {
   return (
     <MainLayout>
       <div>
-          <h1>People component</h1>
+          <h1>The people of starwars</h1>
           <div className="main">
             {spec && <MainPerson 
             name={spec[0]} birth={spec[1]} height={spec[2]} 
@@ -66,6 +66,7 @@ function People() {
           </div>
           <button className="btn"  onClick={()=>{loadPage(prevPage)}}>Prev page</button>
           <button className="btn" onClick={()=>{loadPage(nextPage)}}>Next page</button>
+          <h2>Learn about the people in the star wars universe</h2>
           <div className="peopleDisplay">
             { loading? <h1>Loading</h1> :
                 people.map((item)=>{

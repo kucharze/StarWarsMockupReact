@@ -14,7 +14,6 @@ import FilmList from "./pages/FilmsList";
 function App() {
   return (
     <div className="App">
-      <h1>Star wars</h1>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/films" element={<FilmList />} />

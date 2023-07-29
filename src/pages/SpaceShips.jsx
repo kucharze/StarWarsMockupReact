@@ -53,13 +53,14 @@ function SpaceShips() {
   return (
     <MainLayout>
       <div>
-        <h1>The SpaceShips Section</h1>
+        <h1>Spaceships</h1>
         {
           spec && <MainShip name={spec[0]} model={spec[1]} 
           max_speed={spec[2]} cargo={spec[3]} credits={spec[4]} created={spec[5]}/>
         }
         <button className="btn"  onClick={()=>{loadPage(prevPage)}}>Prev page</button>
         <button className="btn" onClick={()=>{loadPage(nextPage)}}>Next page</button>
+        <h2>Learn about the Spaceships in this universe</h2>
         <div className="shipDisplay">
           {
               loading? <h1>Loading</h1> :
