@@ -1,4 +1,42 @@
 import React, { useEffect, useState } from 'react'
+import han from '../images/han.jpeg'
+import darth from '../images/darth.jpeg'
+import leia from "../images/leia.jpeg"
+import luke from '../images/luke.jpeg'
+import maul from "../images/Maul.jpeg"
+import obi from "../images/obi-wan.jpeg"
+import yoda from "../images/Yoda.jpeg"
+
+const starwars = [
+  {
+    pic: darth,
+    name: "Darth Vader",
+  },
+  {
+    pic: han,
+    name: "Han Solo",
+  },
+  {
+    pic: leia,
+    name: "Princess Leia",
+  },
+  {
+    pic: luke,
+    name: "Luke Skywalker",
+  },
+  {
+    pic: maul,
+    name: "Darth Maul",
+  },
+  {
+    pic: obi,
+    name: "Obi-Wan Kenobi",
+  },
+  {
+    pic: yoda,
+    name: "Yoda",
+  },
+];
 
 function HomePage({images}) {
 
@@ -39,10 +77,10 @@ function HomePage({images}) {
     <div className='carousel'>
       {/* CAROUSEL 2 ATTEMPT */}
       <div className='carouselWrapper'>
-      {images.map((card, i) =>{
+      {starwars.map((card, i) =>{
         return (
           <div key={i} className={i === currentPic ? 'card cardActive' : 'card'}>
-            <img src={"../../public/images/darth.jpeg"} alt="characters" className='carouselImg'/>
+            <img src={card.pic} alt="characters" className='carouselImg'/>
             <div className='cardTextBox'>
               <h2 className='cardTitle'>{card.name}</h2>
             </div>
