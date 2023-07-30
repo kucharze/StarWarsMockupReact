@@ -452,7 +452,12 @@ a {
 /* ------------------------------------------------------------------ */
 /* media queries */
 /* mobile */
-@media screen and (min-width: 390px) and (max-width: 767px) {
+@media screen and (min-width: 390px) and (max-width: 780px) {
+  .Coloritem {
+    height: 150px;
+    /* width: 300px; */
+    margin: 10px;
+  }
   body {
     background-size: contain;
   }
@@ -578,6 +583,12 @@ a {
 /* -------------------------------------------------------------- */
 /* tablet */
 @media screen and (min-width: 820px) and (max-width: 1180px) {
+  .Coloritem {
+    height: 200px;
+    /* width: 300px; */
+    margin: 10px;
+  }
+
   #miniWrapper {
     /* border:solid firebrick; */
     display: none;
@@ -688,7 +699,7 @@ a {
     margin-top: -100px;
   }
 }
-@media screen and (min-width: 575px) and (max-width: 790px) {
+@media screen and (min-width: 575px) and (max-width: 820px) {
   .card {
     /* border: solid fuchsia; */
     width: 100%;
