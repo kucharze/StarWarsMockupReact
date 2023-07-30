@@ -58,7 +58,7 @@ function FilmList() {
           </div>
 
           {/* {films} */}
-        <div id="movieDetails">Movie Info Here</div>
+        {/* <div id="movieDetails">Movie Info Here</div> */}
         </div>
       </MainLayout>
     )
