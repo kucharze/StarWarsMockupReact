@@ -56,18 +56,10 @@ function People() {
   }, []);
   return (
     <MainLayout>
-      <div>
-          <h1>The people of starwars</h1>
-          <div className="main">
-            {spec && <MainPerson 
-            name={spec[0]} birth={spec[1]} height={spec[2]} 
-            gender={spec[3]} mass={spec[4]} homeworld = {spec[5]}
-            />}
-          </div>
-          <button className="btn"  onClick={()=>{loadPage(prevPage)}}>Prev page</button>
-          <button className="btn" onClick={()=>{loadPage(nextPage)}}>Next page</button>
-          <h2>Learn about the people in the star wars universe</h2>
-          <div className="peopleDisplay">
+        <h1 className="pageTitle">PROFILES</h1>
+      <div id='peopleWrap'>
+
+        <div className="peopleDisplay">
             { loading? <h1>Loading</h1> :
                 people.map((item)=>{
                     return <PeopleDisplay 
@@ -78,7 +70,29 @@ function People() {
                     key={item.name} name={item.name}/>
                 })
             }
+            {/* buttons */}
+            <div className="buttonBox">
+              <button className="btn"  onClick={()=>{loadPage(prevPage)}}>Prev</button>
+              <button className="btn" onClick={()=>{loadPage(nextPage)}}>Next</button>
           </div>
+
+          {/*  */}
+
+
+
+        </div> {/* people wrap div */}
+
+
+            <div className="main">
+            {spec && <MainPerson 
+            name={spec[0]} birth={spec[1]} height={spec[2]} 
+            gender={spec[3]} mass={spec[4]} homeworld = {spec[5]}
+            />}
+            </div>
+              
+          
+          
+          
 
       </div>
     </MainLayout>

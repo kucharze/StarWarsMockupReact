@@ -25,12 +25,13 @@ function MainPerson(props) {
 
   return (
     <div className='MainPerson'>
-      <h1>{props.name}</h1>
-      <h2>Birthyear: {props.birth}</h2>
-      <h2>Height: {props.height} meters</h2>
-      <h2>Gender: {props.gender}</h2>
-      <h2>Mass: {props.mass} kg</h2>
-      <h2>Homeworld: {!loading ? homeWorld.name : "Loading"}</h2>
+      <h1 className='mainName'>{props.name}</h1>
+      <br />
+      <h4>Birthyear :<span>{props.birth}</span></h4>
+      <h4>Height: <span>{props.height} meters</span></h4>
+      <h4>Gender: <span>{props.gender}</span></h4>
+      <h4>Mass: <span>{props.mass} kg</span></h4>
+      <h4>Homeworld: <span>{!loading ? homeWorld.name : "Loading"}</span></h4>
     </div>
   )
 }

@@ -53,32 +53,37 @@ function SpaceShips() {
   return (
     <MainLayout>
       <div>
-        <h1>Spaceships</h1>
-        {
-          spec && <MainShip name={spec[0]} model={spec[1]} 
-          max_speed={spec[2]} cargo={spec[3]} credits={spec[4]} created={spec[5]}/>
-        }
-        <button className="btn"  onClick={()=>{loadPage(prevPage)}}>Prev page</button>
-        <button className="btn" onClick={()=>{loadPage(nextPage)}}>Next page</button>
-        <h2>Learn about the Spaceships in this universe</h2>
-        <div className="shipDisplay">
-          {
-              loading? <h1>Loading</h1> :
-              ships.map((item)=>{
-                  return <DisplayItem key={item.name} 
-                  name={item.name} model={item.model}
-                  onClick={()=>{
-                      setMain(item.name,item.model,
-                          item.max_atmosphering_speed,item.cargo_capacity,
-                          item.cost_in_credits, item.created
-                      )
-                  }}
-                  />
-              })
-          }
+        <h1 className="posterTitle2">Spaceships</h1>
+        <div id='spaceWrap'>
+          <div className="shipDisplay">
+              {
+                  loading? <h1>Loading</h1> :
+                  ships.map((item)=>{
+                      return <DisplayItem key={item.name} 
+                      name={item.name} model={item.model}
+                      onClick={()=>{
+                          setMain(item.name,item.model,
+                              item.max_atmosphering_speed,item.cargo_capacity,
+                              item.cost_in_credits, item.created
+                          )
+                      }}
+                      />
+                  })
+              }
+              <div className="buttonBox">
+                <button className="btn"  onClick={()=>{loadPage(prevPage)}}>Prev</button>
+                <button className="btn" onClick={()=>{loadPage(nextPage)}}>Next</button>
+              </div>
+            </div>
+            <div id='mainShipWrap'>
+            {
+              spec && <MainShip name={spec[0]} model={spec[1]} 
+              max_speed={spec[2]} cargo={spec[3]} credits={spec[4]} created={spec[5]}/>
+            }
+            </div>
         </div>
-
       </div>
+
     </MainLayout>
   )
 }
