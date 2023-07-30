@@ -16,11 +16,21 @@
 
 ## WireFrame
 
+![Alt text](Mobile.png) ![Alt text](Tablet.png) ![Alt text](Desktop.png)
+
 ## Component Hierarcgy
 
 ![Alt text](TREE_Example.png)
 
+### Functional Components: (children) Home, Film, People, and Spaceship
+
+### Class components: (Pages - Parents) Home, Film, People, and Spaceship
+
 ## APIs used
+
+### Star Wars API - SWAPI - https://swapi.dev/
+
+### OMDb API - https://www.omdbapi.com/
 
 ## MVP - (Minimum viable product)
 
