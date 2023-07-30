@@ -18,7 +18,7 @@
 
 ![Alt text](Mobile.png) ![Alt text](Tablet.png) ![Alt text](Desktop.png)
 
-## Component Hierarcgy
+## Component Hierarchy
 
 ![Alt text](TREE_Example.png)
 
