@@ -529,7 +529,8 @@ gitHub {
   text-align: justify;
   position: relative;
   text-align: center;
-  animation: play 60s linear forwards;
+  /* top: 5000; */
+  animation: play 30s linear infinite;
 }
 h1,
 h4 {
@@ -538,11 +539,11 @@ h4 {
 @keyframes play {
   from {
     top: 0;
-    transform: translateZ(400) rotateX("20deg");
+    transform: translateZ(1400) rotateX("20deg");
   }
   to {
-    top: -7000px;
-    transform: translateZ(-2500px) rotateX("21deg");
+    top: -5000px;
+    transform: translateZ(-2000px) rotateX("21deg");
   }
 }
 
