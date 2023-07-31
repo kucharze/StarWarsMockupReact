@@ -11,6 +11,7 @@ import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import FilmList from "./pages/FilmsList";
 import Coloring from "./pages/Coloring";
+import CreditContainer from "./components/CreditContainer";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/characters" element={<People />} />
         <Route path="/spaceships" element={<SpaceShips />} />
         <Route path="/kidscoloring" element={<Coloring />} />
+        <Route path="/crawl" element={<CreditContainer />} />
         <Route path="*" element={<NoPage />} />
       </Routes>
     </div>
