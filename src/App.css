@@ -464,6 +464,88 @@ a {
   padding-top: 20px;
 }
 
+body {
+  background-color: black;
+  font-family: "Roboto";
+}
+.App {
+  text-align: center;
+}
+.footerBox {
+  background-color: black;
+  color: black;
+  z-index: 99;
+}
+.footerLinks {
+  display: flex;
+  justify-content: center;
+}
+a {
+  text-decoration: none;
+}
+.one,
+.two {
+  border: 1.5px #f5f5f5;
+  border-style: none solid none none;
+  padding-right: 10px;
+  margin-right: 10px;
+}
+.footerLink:hover {
+  color: gold;
+}
+gitHub {
+  width: 30px;
+  filter: brightness(50);
+}
+.footU {
+  color: transparent;
+  font-size: 62px;
+  background: url("https://prd-rteditorial.s3.us-west-2.amazonaws.com/wp-content/uploads/2023/05/25100858/700Return.jpg");
+  background-size: 40%;
+  background-position: 50% 50%;
+  -webkit-background-clip: text;
+  animation: zoomout 10s ease 0.5s infinite;
+}
+@keyframes zoomout {
+  from {
+    background-size: 40%;
+  }
+  to {
+    background-size: 10%;
+  }
+}
+.CreditContainer {
+  display: flex;
+  height: 100%;
+  width: 60%;
+  margin: 0 auto;
+  perspective: 450px;
+}
+.credits {
+  color: gold;
+  font-size: 3vw;
+  line-height: 1.5em;
+  font-weight: bold;
+  text-align: justify;
+  position: relative;
+  text-align: center;
+  animation: play 60s linear forwards;
+}
+h1,
+h4 {
+  text-align: center;
+}
+@keyframes play {
+  from {
+    top: 0;
+    transform: translateZ(400) rotateX("20deg");
+  }
+  to {
+    top: -7000px;
+    transform: translateZ(-2500px) rotateX("21deg");
+  }
+}
+
 /* 3: 25 CSS part 2 */
 /* ------------------------------------------------------------------ */
 /* media queries */
